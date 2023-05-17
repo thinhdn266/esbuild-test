@@ -1,0 +1,25 @@
+{
+  "name": "esbuild-test",
+  "version": "1.0.0",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "esbuild": "^0.17.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.0.0-rc.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.1.7",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "@types/serve-handler": "^6.1.1",
+    "@types/styled-components": "^5.1.26",
+    "serve-handler": "^6.1.5"
+  },
+  "scripts": {
+    "build": "node esbuild.config.js",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src/**/*.js src/**/*.jsx",
+    "start": "nodemon --watch dist --exec 'yarn type-check & yarn lint' & node esbuild.dev.js"
+  }
+}
