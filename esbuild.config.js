@@ -1,9 +1,10 @@
-const res = require('esbuild').buildSync({
-  entryPoints: ['src/app.jsx'],
+const res = require("esbuild").buildSync({
+  entryPoints: ["src/app.jsx"],
   bundle: true,
   minify: true,
-  format: 'cjs',
+  format: "cjs",
   sourcemap: true,
-  outfile: 'dist/output.js',
-  // external: ['react', 'react-dom'], 
-})
+  outfile: "dist/output.js",
+  packages: "external",
+  // external: ['react', 'react-dom'],
+});
